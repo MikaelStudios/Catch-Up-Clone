@@ -19,6 +19,8 @@ public class Jumper : MonoBehaviour
     {
         if (other.CompareTag("Player")) 
         {
+            other.GetComponent<Rigidbody>().velocity = Vector3.zero;
+            other.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
             other.GetComponent<Rigidbody>().AddForce(new Vector3(0, 1, 0)*JumpForce *50 );
         }
     }
