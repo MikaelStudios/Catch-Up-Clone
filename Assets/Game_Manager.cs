@@ -6,10 +6,12 @@ public class Game_Manager : MonoBehaviour
 {
     private GameObject player;
     [SerializeField] GameObject[] Obstacles;
+    [SerializeField] float FirstObstacleDistance;
     [SerializeField] float ObstacleDistance;
-    int PreNumber;
-    int RandomNumber;
-    // Start is called before the first frame update
+    // Variables for the random number generation
+    int PreNumber; // stores the previous number
+    int RandomNumber; // stores the Random Number
+
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
@@ -17,7 +19,44 @@ public class Game_Manager : MonoBehaviour
         PreNumber = RandomNumber;
     }
 
-    private void StartIfObjectPool()
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (Obstacles != null) 
+        {
+            if (player.transform.position.z > FirstObstacleDistance)
+            {
+                RandomNumberGenerator();
+                ObstacleGenerator();
+            }
+
+
+        }
+       
+    }
+
+    private void ObstacleGenerator()
+    {
+        Instantiate(Obstacles[RandomNumber], new Vector3(Obstacles[RandomNumber].transform.position.x, Obstacles[RandomNumber].transform.position.y, (player.transform.position.z + ObstacleDistance)), Quaternion.identity);
+        //Obstacles[RandomNumber].transform.position = new Vector3(transform.position.x, transform.position.y, ObstacleDistance*2);
+        Obstacles[RandomNumber].SetActive(true);
+        FirstObstacleDistance += ObstacleDistance;
+    }
+
+    private void RandomNumberGenerator()
+    {
+        for (int i = 0; i < Obstacles.Length + 5; i++)
+        {
+            RandomNumber = Random.Range(0, Obstacles.Length);
+            if (RandomNumber != PreNumber)
+            {
+                break;
+            }
+        }
+        PreNumber = RandomNumber;
+    }
+    private void StartIfObjectPool() // Just in Case i want to go back to object pool, which i should
     {
         if (Obstacles != null)
         {
@@ -30,30 +69,4 @@ public class Game_Manager : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (Obstacles != null) 
-        {
-            if (player.transform.position.z > ObstacleDistance)
-            {
-                for (int i = 0; i < Obstacles.Length+5; i++)
-                {
-                    RandomNumber = Random.Range(0, Obstacles.Length);
-                    if (RandomNumber != PreNumber) 
-                    {
-                        break;
-                    }
-                }
-                PreNumber = RandomNumber;
-                Instantiate(Obstacles[RandomNumber], new Vector3(Obstacles[RandomNumber].transform.position.x, Obstacles[RandomNumber].transform.position.y, (player.transform.position.z + ObstacleDistance)), Quaternion.identity);
-                //Obstacles[RandomNumber].transform.position = new Vector3(transform.position.x, transform.position.y, ObstacleDistance*2);
-                Obstacles[RandomNumber].SetActive(true);
-                ObstacleDistance += 10;
-            }
-
-
-        }
-       
-    }
 }

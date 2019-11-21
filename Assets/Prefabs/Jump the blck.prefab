@@ -150,8 +150,8 @@ GameObject:
   - component: {fileID: 2072992628112742595}
   - component: {fileID: 2072992628112742652}
   - component: {fileID: 2072992628112742653}
-  - component: {fileID: 2072992628112742654}
   - component: {fileID: 2072992628112742593}
+  - component: {fileID: 4625228259994353890}
   m_Layer: 0
   m_Name: Jump the blck
   m_TagString: Untagged
@@ -199,7 +199,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c22777d6e868e4f2fb421913386b154e, type: 2}
+  - {fileID: 2100000, guid: 333b57a5e051b8f4caa286faaceb5381, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -443,20 +443,6 @@ MonoBehaviour:
   - a: 7
     b: 6
   m_SelectedVertices: 04000000050000000600000007000000
---- !u!64 &2072992628112742654
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2072992628112742655}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 0}
 --- !u!114 &2072992628112742593
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -469,3 +455,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70f722325fcf0a5479682ece59ff055e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &4625228259994353890
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2072992628112742655}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 6.8184385, y: 1, z: 1}
+  m_Center: {x: 3.4092193, y: 0.5, z: -0.5}

@@ -69,7 +69,7 @@ GameObject:
   - component: {fileID: 7226570610514039411}
   - component: {fileID: 7226570610514039692}
   - component: {fileID: 7226570610514039693}
-  - component: {fileID: 7226570610514039694}
+  - component: {fileID: 6448539590381981951}
   m_Layer: 0
   m_Name: 'Long Cube '
   m_TagString: Untagged
@@ -116,7 +116,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c22777d6e868e4f2fb421913386b154e, type: 2}
+  - {fileID: 2100000, guid: 333b57a5e051b8f4caa286faaceb5381, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -360,8 +360,8 @@ MonoBehaviour:
   - a: 7
     b: 6
   m_SelectedVertices: 04000000050000000600000007000000
---- !u!64 &7226570610514039694
-MeshCollider:
+--- !u!65 &6448539590381981951
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -370,7 +370,6 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 1
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 0}
+  serializedVersion: 2
+  m_Size: {x: 5.8184385, y: 1, z: 1}
+  m_Center: {x: 2.9092193, y: 0.5, z: -0.5}

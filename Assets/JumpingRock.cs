@@ -13,6 +13,6 @@ public class JumpingRock : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.localPosition += new Vector3(randBOunceDir, 0, 0) * 0.1f;
+        //transform.localPosition += new Vector3(randBOunceDir, 0, 0) * 0.1f;
     }
 }
