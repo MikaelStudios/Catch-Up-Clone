@@ -16,7 +16,7 @@ public class UIscript : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         Speed = player.GetComponent<PlayerController>().SpeedOftheBall1;
         player.GetComponent<PlayerController>().SpeedOftheBall1 = 0f;
-        DefaultSpeed = player.GetComponent<PlayerController>().speedOfRotation;
+        DefaultSpeed = player.GetComponent<PlayerController>().SpeedOfRotation;
 
     }
     private void Update()
@@ -24,11 +24,11 @@ public class UIscript : MonoBehaviour
         if (PlayEA == true) 
         {
             _TImeChecker += Time.deltaTime;
-            player.GetComponent<PlayerController>().speedOfRotation += 5f;
+            player.GetComponent<PlayerController>().SpeedOfRotation += 5f;
             if (_TImeChecker >= _WaitTime) 
             {
                 player.GetComponent<PlayerController>().SpeedOftheBall1 = Speed;
-                player.GetComponent<PlayerController>().speedOfRotation = DefaultSpeed;
+                player.GetComponent<PlayerController>().SpeedOfRotation = DefaultSpeed;
                 PlayEA = false;
             }
 
